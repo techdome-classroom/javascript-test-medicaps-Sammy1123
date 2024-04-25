@@ -1,6 +1,5 @@
 function longestSubstring(s) {
   
-var lengthOfLongestSubstring = function (s) {
     let ans = 0;
     const ss = new Set();
     for (let i = 0, j = 0; j < s.length; ++j) {
