@@ -1,6 +1,5 @@
 function longestSubstring(s) {
   
-    var lengthOfLongestSubstring = function (s) {
         if (!s) {
             return 0;
         }
@@ -20,5 +19,5 @@ function longestSubstring(s) {
         }
         return maxLength;
     };
-}
+
 module.exports = { longestSubstring };
