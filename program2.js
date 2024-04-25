@@ -10,8 +10,6 @@ function smallestMissingPositiveInteger(nums) {
           nums[i] = temp;
       }
   }
-
-  // Second pass: Find the first index where the number is not equal to index + 1
   for (let i = 0; i < n; i++) {
       if (nums[i] !== i + 1) {
           return i + 1;
