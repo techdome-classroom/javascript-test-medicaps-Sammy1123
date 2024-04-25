@@ -20,4 +20,4 @@ function longestSubstring(s) {
 
     return maxLength;
 }
-module.exports ={longestSubstring(s)} 
+module.exports ={longestSubstring} 
