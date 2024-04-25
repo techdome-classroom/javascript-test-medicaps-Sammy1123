@@ -1,5 +1,4 @@
 function longestSubstring(s) {
-  
         if (!s) {
             return 0;
         }
