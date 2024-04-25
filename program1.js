@@ -22,9 +22,9 @@ function longestSubstring(s) {
     
         return maxLength;
     }
-        console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
+        console.log(longestSubstring("abcabcbb")); // Output: 3
     
-}
+
 
 module.exports = { longestSubstring };
 
