@@ -12,4 +12,4 @@ function longestSubstring(s) {
     return ans;
 };
 
-module.exports = { longestSubstring };
+module.exports = { longestSubstring  };
