@@ -1,6 +1,5 @@
 function longestSubstring(s) {
     // Implementation of longestSubstring function
-    function lengthOfLongestSubstring(s) {
         let map = {};
         let maxLength = 0;
         let start = 0;
