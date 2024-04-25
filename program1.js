@@ -23,9 +23,7 @@ function longestSubstring(s) {
     
         return maxLength;
     }
-    
-    // Example usage
-    console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
+        console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
     
 }
 
