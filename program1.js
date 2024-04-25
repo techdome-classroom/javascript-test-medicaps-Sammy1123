@@ -4,15 +4,10 @@ function longestSubstring(s) {
         if (!s) {
             return 0;
         }
-        // Starting index of the window
         let start = 0;
-        // Ending index of the window
         let end = 0;
-        // Maximum length of the substring
         let maxLength = 0;
-        // Set to store the unique characters
         const uniqueCharacters = new Set();
-        // Loop for each character in the string
         while (end < s.length) {
             if (!uniqueCharacters.has(s[end])) {
                 uniqueCharacters.add(s[end]);
