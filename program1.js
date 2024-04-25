@@ -1,6 +1,6 @@
 function longestSubstring(s) {
     // Implementation of longestSubstring function
-    var LongestSubstring = function(s) {
+    var longestSubstring = function(s) {
         let left = 0;
         let maxLength = 0;
         let charSet = new Set();
