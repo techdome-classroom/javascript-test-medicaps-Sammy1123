@@ -1,17 +1,29 @@
 function longestSubstring(s) {
   
-var lengthOfLongestSubstring = function (s) {
-    let ans = 0;
-    const ss = new Set();
-    for (let i = 0, j = 0; j < s.length; ++j) {
-        while (ss.has(s[j])) {
-            ss.delete(s[i++]);
+    var lengthOfLongestSubstring = function (s) {
+        // Base condition
+        if (!s) {
+            return 0;
         }
-        ss.add(s[j]);
-        ans = Math.max(ans, j - i + 1);
-    }
-    return ans;
-};
-}
-
+        // Starting index of the window
+        let start = 0;
+        // Ending index of the window
+        let end = 0;
+        // Maximum length of the substring
+        let maxLength = 0;
+        // Set to store the unique characters
+        const uniqueCharacters = new Set();
+        // Loop for each character in the string
+        while (end < s.length) {
+            if (!uniqueCharacters.has(s[end])) {
+                uniqueCharacters.add(s[end]);
+                end++;
+                maxLength = Math.max(maxLength, uniqueCharacters.size);
+            } else {
+                uniqueCharacters.delete(s[start]);
+                start++;
+            }
+        }
+        return maxLength;
+    };
 module.exports = { longestSubstring };
