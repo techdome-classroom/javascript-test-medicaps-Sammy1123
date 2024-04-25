@@ -1,24 +1,26 @@
 function longestSubstring(s) {
-    let maxLength = 0; // to store the maximum length found
-    let start = 0; // left pointer of the sliding window
-    let charIndexMap = new Map(); // to store the latest index of each character
-
-    for (let end = 0; end < s.length; end++) {
-        const currentChar = s[end];
-
-        // If the character is found in the map and its index is within the bounds of the current window
-        if (charIndexMap.has(currentChar) && charIndexMap.get(currentChar) >= start) {
-            start = charIndexMap.get(currentChar) + 1; // move the start right after the last occurrence
-        }
-
-        // Update the latest index of the character
-        charIndexMap.set(currentChar, end);
-        
-        // Calculate the length of the current substring
-        maxLength = Math.max(maxLength, end - start + 1);
+    // Use a hash table to track the last seen index of each character.
+    const used = {};
+    // Keep track of the starting index of the current substring.
+    let start = 0;
+    // Initialize the maximum length seen so far.
+    let max_length = 0;
+  
+    for (let i = 0; i < s.length; i++) {
+      const char = s[i];
+      // If the character is already in used and within the current window
+      if (char in used && used[char] >= start) {
+        // Shift the starting index to avoid duplicates
+        start = used[char] + 1;
+      } else {
+        // Update the max_length
+        max_length = Math.max(max_length, i - start + 1);
+      }
+      // Update the used dictionary
+      used[char] = i;
     }
-
-    return maxLength;
-}
+  
+    return max_length;
+  }
 
 module.exports = { longestSubstring };
