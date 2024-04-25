@@ -1,7 +1,6 @@
 function longestSubstring(s) {
   
     var lengthOfLongestSubstring = function (s) {
-        // Base condition
         if (!s) {
             return 0;
         }
