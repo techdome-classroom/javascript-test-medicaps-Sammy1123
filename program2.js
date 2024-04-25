@@ -17,8 +17,6 @@ function smallestMissingPositiveInteger(nums) {
           return i + 1;
       }
   }
-
-  // If all numbers from 1 to n are present, the smallest missing positive is n + 1
   return n + 1;
 }
 
