@@ -1,18 +1,23 @@
 function longestSubstring(s) {
-    let maxLength = 0;
-    let start = 0;
-    const charMap = new Map();
-
-    for (let end = 0; end < s.length; end++) {
-        const char = s[end];
-        if (charMap.has(char)) {
-            start = Math.max(start, charMap.get(char) + 1);
+    var lengthOfLongestSubstring = function(s) {
+    
+    };var lengthOfLongestSubstring = function(s) {
+        let left = 0;
+        let maxLength = 0;
+        let charSet = new Set();
+    
+        for (let right = 0; right < s.length; right++) {
+            while (charSet.has(s[right])) {
+                charSet.delete(s[left]);
+                left++;
+            }
+    
+            charSet.add(s[right]);
+            maxLength = Math.max(maxLength, right - left + 1);
         }
-        charMap.set(char, end);
-        maxLength = Math.max(maxLength, end - start + 1);
-    }
-
-    return maxLength;
+    
+        return maxLength;    
+    };
 }
 
 module.exports = { longestSubstring };
